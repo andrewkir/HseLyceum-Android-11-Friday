@@ -1,4 +1,4 @@
-package ru.andrewkir.testingapplication.ui.component
+package ru.andrewkir.testingapplication.presentation.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -10,9 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.ContentScale.Companion
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview

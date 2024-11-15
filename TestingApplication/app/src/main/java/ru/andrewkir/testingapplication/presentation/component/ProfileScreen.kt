@@ -1,4 +1,4 @@
-package ru.andrewkir.testingapplication.ui.component
+package ru.andrewkir.testingapplication.presentation.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
