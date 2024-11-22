@@ -7,68 +7,46 @@ import ru.andrewkir.testingapplication.model.GoodsModel
 import ru.andrewkir.testingapplication.presentation.component.AmountInStock.MEDIUM
 import ru.andrewkir.testingapplication.presentation.contract.GoodsEvent
 import ru.andrewkir.testingapplication.presentation.contract.GoodsEvent.OnButtonClicked
-import ru.andrewkir.testingapplication.presentation.contract.GoodsEvent.OnTextUpdated
+import ru.andrewkir.testingapplication.presentation.contract.GoodsEvent.OnNameUpdated
+import ru.andrewkir.testingapplication.presentation.contract.GoodsEvent.OnPriceUpdated
 import ru.andrewkir.testingapplication.presentation.contract.GoodsState
 
 class GoodsViewModel : ViewModel() {
 
   val state = MutableStateFlow(GoodsState())
 
-  init {
-    val goods = listOf(
-      GoodsModel(
-        name = "Лапка",
-        price = 3000,
-        rating = 4,
-        image = R.drawable.lapki,
-        amount = MEDIUM,
-      ),
-      GoodsModel(
-        name = "Лапка",
-        price = 3000,
-        rating = 4,
-        image = R.drawable.lapki,
-        amount = MEDIUM,
-      ),
-      GoodsModel(
-        name = "Лапка",
-        price = 3000,
-        rating = 4,
-        image = R.drawable.lapki,
-        amount = MEDIUM,
-      ),
-      GoodsModel(
-        name = "Лапка",
-        price = 3000,
-        rating = 4,
-        image = R.drawable.lapki,
-        amount = MEDIUM,
-      )
-    )
-
-    state.value = state.value.copy(goods = goods)
-  }
-
   fun handleEvent(event: GoodsEvent) {
     when (event) {
-      is OnTextUpdated -> {
-        state.value = state.value.copy(textFieldState = event.text)
+      is OnNameUpdated -> {
+        state.value = state.value.copy(textNameState = event.text)
       }
 
       OnButtonClicked -> {
         state.value = state.value.copy(
           goods = listOf(
             GoodsModel(
-              name = state.value.textFieldState,
-              price = 3000,
+              name = state.value.textNameState,
+              price = state.value.textPriceState.toInt(),
               rating = 4,
               image = R.drawable.lapki,
               amount = MEDIUM,
             )
-          ) + state.value.goods,
-          textFieldState = "",
+          )
+            + state.value.goods,
+          textNameState = "",
+          textPriceState = "",
         )
       }
+
+      is OnPriceUpdated -> {
+        if (event.price.isNumeric()) {
+          state.value = state.value.copy(textPriceState = event.price)
+        }
+      }
     }
+  }
+
+  private fun String.isNumeric(): Boolean {
+    return this.all { char -> char.isDigit() }
   }
 }

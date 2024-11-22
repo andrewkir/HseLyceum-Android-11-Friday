@@ -22,10 +22,17 @@ fun GoodsScreenContent(
   Column {
 
     Row(modifier = Modifier.padding(16.dp)) {
-      TextField(value = state.textFieldState,
-        onValueChange = { changedValue -> onEvent(GoodsEvent.OnTextUpdated(changedValue)) },
-        label = { Text("Enter") }
-      )
+      Column {
+        TextField(value = state.textNameState,
+          onValueChange = { changedValue -> onEvent(GoodsEvent.OnNameUpdated(changedValue)) },
+          label = { Text("Enter name") }
+        )
+
+        TextField(value = state.textPriceState,
+          onValueChange = { changedValue -> onEvent(GoodsEvent.OnPriceUpdated(changedValue)) },
+          label = { Text("Enter price") }
+        )
+      }
 
       Spacer(Modifier.weight(1f))
 
