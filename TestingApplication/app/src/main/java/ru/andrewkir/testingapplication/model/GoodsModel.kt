@@ -1,7 +1,7 @@
 package ru.andrewkir.testingapplication.model
 
 import androidx.annotation.DrawableRes
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock
 
 data class GoodsModel(
   val name: String,

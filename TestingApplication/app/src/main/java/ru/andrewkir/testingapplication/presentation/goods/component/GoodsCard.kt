@@ -1,4 +1,4 @@
-package ru.andrewkir.testingapplication.presentation.component
+package ru.andrewkir.testingapplication.presentation.goods.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.andrewkir.testingapplication.R
 import ru.andrewkir.testingapplication.model.GoodsModel
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock.MEDIUM
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.MEDIUM
 
 @Composable
 fun GoodsCard(

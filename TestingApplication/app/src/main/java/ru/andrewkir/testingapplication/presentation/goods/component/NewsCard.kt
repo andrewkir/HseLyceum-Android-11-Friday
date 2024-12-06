@@ -1,4 +1,4 @@
-package ru.andrewkir.testingapplication.presentation.component
+package ru.andrewkir.testingapplication.presentation.goods.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

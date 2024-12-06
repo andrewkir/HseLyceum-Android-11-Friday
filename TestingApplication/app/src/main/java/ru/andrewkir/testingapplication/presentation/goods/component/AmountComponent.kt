@@ -1,4 +1,4 @@
-package ru.andrewkir.testingapplication.presentation.component
+package ru.andrewkir.testingapplication.presentation.goods.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -11,10 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock.EMPTY
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock.FULL
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock.LOW
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock.MEDIUM
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.EMPTY
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.FULL
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.LOW
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.MEDIUM
 
 @Composable
 fun AmountComponent(

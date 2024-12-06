@@ -11,8 +11,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ru.andrewkir.testingapplication.presentation.component.ProfileScreen
-import ru.andrewkir.testingapplication.presentation.screen.GoodsScreen
+import com.ramcosta.composedestinations.DestinationsNavHost
+import ru.andrewkir.testingapplication.presentation.NavGraphs
+import ru.andrewkir.testingapplication.presentation.goods.component.ProfileScreen
 import ru.andrewkir.testingapplication.ui.theme.TestingApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
       TestingApplicationTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
           Column(modifier = Modifier.padding(innerPadding)) {
-            GoodsScreen()
+            DestinationsNavHost(navGraph = NavGraphs.root)
           }
         }
       }

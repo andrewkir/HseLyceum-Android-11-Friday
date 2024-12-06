@@ -15,8 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ru.andrewkir.testingapplication.model.GoodsModel
-import ru.andrewkir.testingapplication.presentation.component.AmountInStock.MEDIUM
-import ru.andrewkir.testingapplication.presentation.component.GoodsCard
+import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.MEDIUM
+import ru.andrewkir.testingapplication.presentation.goods.component.GoodsCard
 import ru.andrewkir.testingapplication.ui.theme.TestingApplicationTheme
 
 class GoodsActivity : ComponentActivity() {

@@ -1,4 +1,4 @@
-package ru.andrewkir.testingapplication.presentation.component
+package ru.andrewkir.testingapplication.presentation.goods.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,8 +11,8 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import ru.andrewkir.testingapplication.presentation.contract.GoodsEvent
-import ru.andrewkir.testingapplication.presentation.contract.GoodsState
+import ru.andrewkir.testingapplication.presentation.goods.contract.GoodsEvent
+import ru.andrewkir.testingapplication.presentation.goods.contract.GoodsState
 
 @Composable
 fun GoodsScreenContent(
