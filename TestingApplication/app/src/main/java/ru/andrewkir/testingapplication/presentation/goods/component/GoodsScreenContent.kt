@@ -46,7 +46,8 @@ fun GoodsScreenContent(
       state.goods.forEach { item ->
         item {
           GoodsCard(
-            item = item
+            item = item,
+            onEvent = onEvent,
           )
         }
 

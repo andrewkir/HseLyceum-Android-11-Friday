@@ -1,6 +1,5 @@
 package ru.andrewkir.testingapplication.presentation.goods.component
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,28 +13,33 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.andrewkir.testingapplication.R
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
+import com.bumptech.glide.integration.compose.GlideImage
 import ru.andrewkir.testingapplication.model.GoodsModel
 import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock.MEDIUM
+import ru.andrewkir.testingapplication.presentation.goods.contract.GoodsEvent
 
+@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun GoodsCard(
   item: GoodsModel,
+  onEvent: (GoodsEvent) -> Unit,
 ) {
-  ElevatedCard {
-    Image(
+  ElevatedCard(
+    onClick = {
+      onEvent(GoodsEvent.OnCardClick(item))
+    }
+  ) {
+    GlideImage(
       modifier = Modifier
-        .height(200.dp)
+        .height(150.dp)
         .fillMaxWidth(),
-      painter = painterResource(item.image),
-      contentDescription = null,
-      contentScale = ContentScale.Crop
+      model = item.imageURL,
+      contentDescription = "Фоновое изображение",
     )
 
     Row(
@@ -55,7 +59,7 @@ fun GoodsCard(
         Icon(
           imageVector = Icons.Default.Star,
           contentDescription = null,
-          tint = if(i <= item.rating) {
+          tint = if (i <= item.rating) {
             Color(0xFFD787B2)
           } else {
             Color(0xFFBDBDBD)
@@ -97,8 +101,9 @@ private fun GoodsCardPreview() {
       name = "Лапка",
       price = 3000,
       rating = 4,
-      image = R.drawable.lapki,
+      imageURL = "",
       amount = MEDIUM,
-    )
+    ),
+    onEvent = {}
   )
 }

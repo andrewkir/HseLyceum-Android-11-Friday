@@ -1,13 +1,13 @@
 package ru.andrewkir.testingapplication.model
 
-import androidx.annotation.DrawableRes
+import kotlinx.serialization.Serializable
 import ru.andrewkir.testingapplication.presentation.goods.component.AmountInStock
 
+@Serializable
 data class GoodsModel(
   val name: String,
   val price: Int,
   val amount: AmountInStock,
-  @DrawableRes
-  val image: Int,
+  val imageURL: String,
   val rating: Int,
 )

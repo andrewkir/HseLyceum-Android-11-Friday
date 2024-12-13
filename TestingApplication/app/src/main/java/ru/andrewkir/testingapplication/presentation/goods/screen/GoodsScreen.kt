@@ -33,8 +33,8 @@ fun GoodsScreen(
   LaunchedEffect(viewModel.effect) {
     viewModel.effect.collectLatest { effect ->
       when(effect){
-        OpenGoodsDetails -> {
-          navigator.navigate(GoodsDetailScreenContentDestination)
+        is OpenGoodsDetails -> {
+          navigator.navigate(GoodsDetailScreenContentDestination(item = effect.item))
         }
       }
     }
